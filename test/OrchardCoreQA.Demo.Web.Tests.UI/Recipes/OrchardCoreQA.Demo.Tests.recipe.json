@@ -20,6 +20,12 @@
       ]
     },
     {
+      "name": "feature",
+      "disable": [
+        "Lombiq.Hosting.Azure.ApplicationInsights"
+      ]
+    },
+    {
       "name": "settings",
       "UseCdn": false
     }

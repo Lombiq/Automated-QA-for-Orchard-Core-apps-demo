@@ -12,10 +12,6 @@ builder.Services
     .AddSingleton(configuration)
     .AddOrchardCms(orchardCoreBuilder =>
     {
-        orchardCoreBuilder
-            .AddDatabaseShellsConfigurationIfAvailable(configuration)
-            .ConfigureSmtpSettings();
-
         if (!configuration.IsUITesting())
         {
             orchardCoreBuilder

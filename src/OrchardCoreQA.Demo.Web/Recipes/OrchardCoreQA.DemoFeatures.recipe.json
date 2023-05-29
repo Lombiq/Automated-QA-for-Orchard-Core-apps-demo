@@ -63,6 +63,7 @@
 
         // Demo modules
         "OrchardCoreQA.Demo.Module",
+        "Lombiq.Hosting.Azure.ApplicationInsights",
 
         // Themes
         "OrchardCoreQA.Demo.Theme",

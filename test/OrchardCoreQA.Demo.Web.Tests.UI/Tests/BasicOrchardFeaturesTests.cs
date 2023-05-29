@@ -1,8 +1,8 @@
 using Lombiq.Tests.UI.Attributes;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Services;
-using System.Threading.Tasks;
 using OrchardCoreQA.Demo.Web.Tests.UI.Constants;
+using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
 
