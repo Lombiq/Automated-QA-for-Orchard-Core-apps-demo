@@ -1,0 +1,31 @@
+{
+  "name": "OrchardCoreQA.Demo.Setup",
+  "displayName": "Orchard Core QA Demo Setup",
+  "description": "Setup recipe for the OrchardCoreQA.Demo project.",
+  "author": "Lombiq Technologies",
+  "website": "https://github.com/Lombiq/Automated-QA-for-Orchard-Core-apps-demo",
+  "version": "1.0",
+  "issetuprecipe": true,
+  "categories": [ "OrchardCoreQA.Demo" ],
+  "tags": [],
+
+  "steps": [
+    {
+      "name": "recipes",
+      "Values": [
+        {
+          "executionid": "OrchardCoreQA.Demo.Web",
+          "name": "OrchardCoreQA.Demo.Features"
+        },
+        {
+          "executionid": "OrchardCoreQA.Demo.Web",
+          "name": "OrchardCoreQA.Demo.Configuration"
+        },
+        {
+          "executionid": "OrchardCoreQA.Demo.Web",
+          "name": "OrchardCoreQA.Demo.Content"
+        }
+      ]
+    }
+  ]
+}

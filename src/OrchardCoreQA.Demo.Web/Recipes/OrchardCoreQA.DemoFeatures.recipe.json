@@ -1,0 +1,74 @@
+{
+  "name": "OrchardCoreQA.Demo.Features",
+  "displayName": "Orchard Core QA Demo - Features",
+  "description": "Features configuration.",
+  "author": "Lombiq Technologies",
+  "website": "https://github.com/Lombiq/Automated-QA-for-Orchard-Core-apps-demo",
+  "version": "1.0",
+  "categories": [ "OrchardCoreQA.Demo" ],
+  "tags": [],
+
+  "steps": [
+    {
+      "name": "feature",
+      "enable": [
+        // SaaS
+        "OrchardCore.HomeRoute",
+        "OrchardCore.Admin",
+        "OrchardCore.Diagnostics",
+        "OrchardCore.DynamicCache",
+        "OrchardCore.Features",
+        "OrchardCore.Navigation",
+        "OrchardCore.Recipes",
+        "OrchardCore.Resources",
+        "OrchardCore.Roles",
+        "OrchardCore.Security",
+        "OrchardCore.Settings",
+        "OrchardCore.Themes",
+        "OrchardCore.Users",
+
+        // Content Management
+        "Lombiq.HelpfulExtensions.ContentTypes",
+        "Lombiq.HelpfulExtensions.Widgets",
+        "OrchardCore.Alias",
+        "OrchardCore.AdminMenu",
+        "OrchardCore.Autoroute",
+        "OrchardCore.Html",
+        "OrchardCore.ContentFields",
+        "OrchardCore.ContentPreview",
+        "OrchardCore.Contents",
+        "OrchardCore.Contents.Deployment.ExportContentToDeploymentTarget",
+        "OrchardCore.ContentTypes",
+        "OrchardCore.CustomSettings",
+        "OrchardCore.Deployment",
+        "OrchardCore.Deployment.Remote",
+        "OrchardCore.Feeds",
+        "OrchardCore.Flows",
+        "OrchardCore.Indexing",
+        "OrchardCore.Layers",
+        "OrchardCore.Lists",
+        "OrchardCore.Localization",
+        "OrchardCore.Markdown",
+        "OrchardCore.Media",
+        "OrchardCore.Menu",
+        "OrchardCore.Placements",
+        "OrchardCore.Queries",
+        "OrchardCore.Queries.Sql",
+        "OrchardCore.Shortcodes.Templates",
+        "OrchardCore.Rules",
+        "OrchardCore.Taxonomies",
+        "OrchardCore.Title",
+        "OrchardCore.Templates",
+        "OrchardCore.Widgets",
+
+        // Demo modules
+        "OrchardCoreQA.Demo.Module",
+
+        // Themes
+        "OrchardCoreQA.Demo.Theme",
+        "TheAdmin",
+        "SafeMode"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "name": "OrchardCoreQA.Demo.Content",
+  "displayName": "Orchard Core QA Demo - Content",
+  "description": "Default content items of the demo app.",
+  "author": "Lombiq Technologies",
+  "website": "https://github.com/Lombiq/Automated-QA-for-Orchard-Core-apps-demo",
+  "version": "1.0",
+  "categories": [ "OrchardCoreQA.Demo" ],
+  "tags": [],
+
+  "steps": [
+    {
+      "name": "Content",
+      "data": [
+        {
+          "ContentItemId": "4v2p65b6azq5wx2qgjz2qe6adh",
+          "ContentItemVersionId": "4k3syxy8x0byr2pbzxcj7mss4j",
+          "ContentType": "Page",
+          "DisplayText": "Welcome!",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2023-04-06T23:36:06.1356471Z",
+          "PublishedUtc": "2023-04-06T23:36:06.1457363Z",
+          "CreatedUtc": "2023-04-06T23:33:13.5110352Z",
+          "Owner": "4kf88vvjdc5xxxy2g1qtf8a7d7",
+          "Author": "admin",
+          "TitlePart": {
+            "Title": "Welcome!"
+          },
+          "AutoroutePart": {
+            "Path": "welcome",
+            "SetHomepage": true,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false
+          },
+          "FlowPart": {
+            "Widgets": [
+              {
+                "ContentItemId": "4xqvztc05exvq2a7d31v70v3na",
+                "ContentItemVersionId": null,
+                "ContentType": "HtmlWidget",
+                "DisplayText": "",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2023-04-06T23:36:06.1427775Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": "",
+                "Author": "admin",
+                "HtmlBodyPart": {
+                  "Html": "<p>Welcome to the demo app of the \"Automated QA for Orchard Core apps\" Orchard Harvest 2023 talk!</p>"
+                },
+                "FlowMetadata": {
+                  "Alignment": 3,
+                  "Size": 100
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
