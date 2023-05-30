@@ -34,9 +34,6 @@ public class UITestBase : OrchardCoreUITestBase<Program>
                 configuration
                     .AccessibilityCheckingConfiguration.RunAccessibilityCheckingAssertionOnAllPageChanges = true;
 
-                // Uncomment if SQL Server will be used for the tests.
-                ////configuration.UseSqlServer = true;
-
                 changeConfiguration?.Invoke(configuration);
             });
 }

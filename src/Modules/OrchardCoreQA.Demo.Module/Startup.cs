@@ -7,5 +7,5 @@ namespace OrchardCoreQA.Demo.Module;
 public class Startup : StartupBase
 {
     public override void ConfigureServices(IServiceCollection services) =>
-        services.AddScoped<ITestedService, TestedService>();
+        services.AddScoped<IContentService, ContentService>();
 }

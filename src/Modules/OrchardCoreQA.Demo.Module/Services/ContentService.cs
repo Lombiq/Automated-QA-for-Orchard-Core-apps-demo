@@ -2,17 +2,18 @@ using OrchardCore.ContentManagement;
 
 namespace OrchardCoreQA.Demo.Module.Services;
 
-public interface ITestedService
+public interface IContentService
 {
     Task<ContentItem> GetContentItemOrThrowAsync(string id);
 
+    ContentItem ChangeDisplayText(ContentItem contentItem, string displayText);
 }
 
-public class TestedService : ITestedService
+public class ContentService : IContentService
 {
     private readonly IContentManager _contentManager;
 
-    public TestedService(IContentManager contentManager) => _contentManager = contentManager;
+    public ContentService(IContentManager contentManager) => _contentManager = contentManager;
 
     public Task<ContentItem> GetContentItemOrThrowAsync(string id)
     {
@@ -24,6 +25,12 @@ public class TestedService : ITestedService
         var contentItem = GetContentItemOrThrowInternal(id);
 
         return GetContentItemOrThrowInternal(id);
+    }
+
+    public ContentItem ChangeDisplayText(ContentItem contentItem, string displayText)
+    {
+        contentItem.DisplayText = displayText;
+        return contentItem;
     }
 
     private async Task<ContentItem> GetContentItemOrThrowInternal(string id) =>

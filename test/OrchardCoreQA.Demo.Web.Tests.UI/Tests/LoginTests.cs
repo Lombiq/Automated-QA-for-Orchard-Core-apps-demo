@@ -29,6 +29,9 @@ public class LoginTests : UITestBase
 
                 await context.ClickReliablyOnSubmitAsync();
 
+                context.Exists(By.ClassName("fa-user"));
+                context.Get(By.CssSelector("a.nav-link.dropdown-toggle")).Text.ShouldContain(DefaultUser.UserName);
+
                 (await context.GetCurrentUserNameAsync()).ShouldBe(DefaultUser.UserName);
             },
             browser);
