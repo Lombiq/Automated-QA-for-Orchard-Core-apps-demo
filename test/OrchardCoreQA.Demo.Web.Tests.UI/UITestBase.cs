@@ -1,4 +1,5 @@
 using Lombiq.Tests.UI;
+using Lombiq.Tests.UI.Constants;
 using Lombiq.Tests.UI.Services;
 using OrchardCoreQA.Demo.Web.Tests.UI.Helpers;
 using System;
@@ -23,17 +24,19 @@ public class UITestBase : OrchardCoreUITestBase<Program>
     protected override Task ExecuteTestAsync(
         Func<UITestContext, Task> testAsync,
         Browser browser,
-        Func<UITestContext, Task<Uri>> setupOperation = null,
-        Action<OrchardCoreUITestExecutorConfiguration> changeConfiguration = null) =>
+        Func<UITestContext, Task<Uri>> setupOperation,
+        Func<OrchardCoreUITestExecutorConfiguration, Task> changeConfigurationAsync) =>
         base.ExecuteTestAsync(
             testAsync,
             browser,
             setupOperation,
-            configuration =>
+            async configuration =>
             {
                 configuration
                     .AccessibilityCheckingConfiguration.RunAccessibilityCheckingAssertionOnAllPageChanges = true;
 
-                changeConfiguration?.Invoke(configuration);
+                configuration.BrowserConfiguration.DefaultBrowserSize = CommonDisplayResolutions.Qhd;
+
+                if (changeConfigurationAsync != null) await changeConfigurationAsync(configuration);
             });
 }

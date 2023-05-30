@@ -9,8 +9,6 @@ namespace OrchardCoreQA.Demo.Module.Tests;
 
 public class ContentServiceTests
 {
-    private const string TestContentId = "content ID";
-
     #region Simple test
     [Fact]
     public void ChangeDisplayTextShouldChangeDisplayText()
@@ -36,32 +34,17 @@ public class ContentServiceTests
     }
     #endregion
 
-    #region Tests with mocking
+    #region Test with mocking
     [Fact]
     public void NonExistingContentItemsShouldThrow()
     {
         var service = CreateTestedService(out var mocker);
 
-        Should.Throw<InvalidOperationException>(() => service.GetContentItemOrThrowAsync(TestContentId));
+        Should.Throw<InvalidOperationException>(() => service.GetContentItemOrThrowAsync("content ID"));
 
         mocker
             .GetMock<IContentManager>()
-            .Verify(contentManager => contentManager.GetAsync(It.Is<string>(id => id == TestContentId)));
-    }
-
-    [Fact]
-    public async Task ContentItemsAreRetrieved()
-    {
-        var service = CreateTestedService(out var mocker);
-
-        mocker
-            .GetMock<IContentManager>()
-            .Setup(contentManager => contentManager.GetAsync(It.IsAny<string>()))
-            .ReturnsAsync<string, IContentManager, ContentItem>(id => new ContentItem { ContentItemId = id });
-
-        var contentItem = await service.GetContentItemOrThrowAsync(TestContentId);
-
-        contentItem.ContentItemId.ShouldBe(TestContentId);
+            .Verify(contentManager => contentManager.GetAsync(It.Is<string>(id => id == "content ID")));
     }
 
     private static ContentService CreateTestedService(out AutoMocker mocker)

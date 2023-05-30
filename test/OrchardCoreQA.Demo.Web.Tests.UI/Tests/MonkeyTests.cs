@@ -25,6 +25,6 @@ public class MonkeyTests : UITestBase
     private static MonkeyTestingOptions CreateMonkeyTestingOptions() =>
         new()
         {
-            PageTestTime = TimeSpan.FromSeconds(5),
+            PageTestTime = TimeSpan.FromSeconds(10),
         };
 }
