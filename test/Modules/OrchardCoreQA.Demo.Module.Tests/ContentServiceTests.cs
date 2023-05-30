@@ -9,8 +9,6 @@ namespace OrchardCoreQA.Demo.Module.Tests;
 
 public class ContentServiceTests
 {
-    private const string TestContentId = "content ID";
-
     #region Simple test
     [Fact]
     public void ChangeDisplayTextShouldChangeDisplayText()
@@ -42,11 +40,11 @@ public class ContentServiceTests
     {
         var service = CreateTestedService(out var mocker);
 
-        Should.Throw<InvalidOperationException>(() => service.GetContentItemOrThrowAsync(TestContentId));
+        Should.Throw<InvalidOperationException>(() => service.GetContentItemOrThrowAsync("content ID"));
 
         mocker
             .GetMock<IContentManager>()
-            .Verify(contentManager => contentManager.GetAsync(It.Is<string>(id => id == TestContentId)));
+            .Verify(contentManager => contentManager.GetAsync(It.Is<string>(id => id == "content ID")));
     }
 
     private static ContentService CreateTestedService(out AutoMocker mocker)
