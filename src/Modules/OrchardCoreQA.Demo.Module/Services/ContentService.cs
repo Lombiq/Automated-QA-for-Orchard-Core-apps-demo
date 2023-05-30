@@ -6,6 +6,7 @@ namespace OrchardCoreQA.Demo.Module.Services;
 [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1600:Elements should be documented", Justification = "Just a simple sample.")]
 public interface IContentService
 {
+
     Task<ContentItem> GetContentItemOrThrowAsync(string id);
 
     ContentItem ChangeDisplayText(ContentItem contentItem, string displayText);
