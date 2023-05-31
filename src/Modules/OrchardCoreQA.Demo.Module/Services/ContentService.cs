@@ -2,8 +2,13 @@ using OrchardCore.ContentManagement;
 
 namespace OrchardCoreQA.Demo.Module.Services;
 
+[System.Diagnostics.CodeAnalysis.SuppressMessage(
+    "StyleCop.CSharp.DocumentationRules",
+    "SA1600:Elements should be documented",
+    Justification = "This is just demo.")]
 public interface IContentService
 {
+
     Task<ContentItem> GetContentItemOrThrowAsync(string id);
 
     ContentItem ChangeDisplayText(ContentItem contentItem, string displayText);
@@ -22,9 +27,7 @@ public class ContentService : IContentService
             throw new ArgumentNullException(nameof(id), "The supplied content item ID was null or empty.");
         }
 
-        var contentItem = GetContentItemOrThrowInternal(id);
-
-        return GetContentItemOrThrowInternal(id);
+        return GetContentItemOrThrowInternalAsync(id);
     }
 
     public ContentItem ChangeDisplayText(ContentItem contentItem, string displayText)
@@ -33,8 +36,6 @@ public class ContentService : IContentService
         return contentItem;
     }
 
-    private async Task<ContentItem> GetContentItemOrThrowInternal(string id) =>
+    private async Task<ContentItem> GetContentItemOrThrowInternalAsync(string id) =>
         await _contentManager.GetAsync(id) ?? throw new InvalidOperationException($"The content item with the ID {id} doesn't exist.");
-
-    // TODO: Add method to retrieve multiple content items.
 }

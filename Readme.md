@@ -1,9 +1,8 @@
 # Automated QA for Orchard Core apps - demo solution
 
-
 This is the Orchard Core solution for the code demoed at the [Orchard Harvest](https://orchardcore.net/harvest) conference in 2023.
 
-# Links
+## Links
 
 Links to the projects used:
 
