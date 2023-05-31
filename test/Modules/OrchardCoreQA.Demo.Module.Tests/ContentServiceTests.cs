@@ -13,7 +13,7 @@ public class ContentServiceTests
     [Fact]
     public void ChangeDisplayTextShouldChangeDisplayText()
     {
-        var service = CreateTestedService(out _);
+        var service = CreateService(out _);
 
         var contentItem = new ContentItem();
 
@@ -29,7 +29,7 @@ public class ContentServiceTests
     [InlineData("")]
     public void NullOrEmptyArgumentsShouldThrow(string id)
     {
-        var service = CreateTestedService(out _);
+        var service = CreateService(out _);
         Should.Throw<ArgumentNullException>(() => service.GetContentItemOrThrowAsync(id));
     }
     #endregion
@@ -38,7 +38,7 @@ public class ContentServiceTests
     [Fact]
     public void NonExistingContentItemsShouldThrow()
     {
-        var service = CreateTestedService(out var mocker);
+        var service = CreateService(out var mocker);
 
         Should.Throw<InvalidOperationException>(() => service.GetContentItemOrThrowAsync("content ID"));
 
@@ -47,7 +47,7 @@ public class ContentServiceTests
             .Verify(contentManager => contentManager.GetAsync(It.Is<string>(id => id == "content ID")));
     }
 
-    private static ContentService CreateTestedService(out AutoMocker mocker)
+    private static ContentService CreateService(out AutoMocker mocker)
     {
         mocker = new AutoMocker();
         return mocker.CreateInstance<ContentService>();
